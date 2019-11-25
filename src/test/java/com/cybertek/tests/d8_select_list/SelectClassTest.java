@@ -71,11 +71,6 @@ public class SelectClassTest {
        StateList.selectByValue("DC");
        Assert.assertEquals(actualSelection,"District Of Columbia");
 
-
 }
-
-
-
-
 
 }
