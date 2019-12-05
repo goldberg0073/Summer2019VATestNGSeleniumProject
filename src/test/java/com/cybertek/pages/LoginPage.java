@@ -4,6 +4,7 @@ import com.cybertek.tests.practice.TestBase;
 import com.cybertek.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage extends TestBase {
@@ -11,6 +12,11 @@ public class LoginPage extends TestBase {
     public LoginPage(){
         PageFactory.initElements(Driver.get(), this);
     }
+
+    //  @FindBys({@FindBy(id="prependedInput"),@FindBy(name="prependedInput")})
+    // find element using multiple locators
+    // @FindAll====> find element that matches all the locators provided
+
 
     @FindBy(id="prependedInput")
     public WebElement userName;
