@@ -58,6 +58,8 @@ public class ExtentDemoTest {
 
     }
 
+
+
     @AfterMethod
     public void close(){
         // this is when the report is actually created.

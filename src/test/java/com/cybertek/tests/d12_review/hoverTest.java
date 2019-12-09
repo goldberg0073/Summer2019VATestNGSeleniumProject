@@ -56,7 +56,6 @@ public class hoverTest {
 
     }
 
-
     @AfterMethod
     public void tearDown() {
         driver.quit();
