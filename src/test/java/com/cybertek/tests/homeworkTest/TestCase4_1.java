@@ -251,4 +251,51 @@ public class TestCase4_1 {
 
     }
 
+    @Test
+    public void test6() throws InterruptedException {
+
+        WebElement username=driver.findElement(By.id("prependedInput"));
+        username.sendKeys("storemanager85");
+        WebElement password=driver.findElement(By.id("prependedInput2"));
+        password.sendKeys("UserUser123");
+        WebElement submit=driver.findElement(By.id("_submit"));
+        submit.click();
+
+        Actions action=new Actions(driver);
+        WebElement activity=driver.findElement(By.xpath("//*[@id=\"main-menu\"]/ul/li[5]/a/span"));
+        Thread.sleep(3000);
+        action.moveToElement(activity).click().perform();
+
+        Actions actions=new Actions(driver);
+        WebElement  calendar=driver.findElement(By.xpath("//*[@id=\"main-menu\"]/ul/li[5]/div/div/ul/li[4]/a/span"));
+        actions.moveToElement(calendar).click().perform();
+        Thread.sleep(3000);
+
+
+        driver.findElement(By.xpath("//a[@class='btn main-group btn-primary pull-right ']")).click();
+
+        Thread.sleep(1000);
+        WebElement HourStart=driver.findElement(By.xpath("//input[starts-with(@id,'time_selector_oro_calendar_event_form_start-uid')]"));
+       action.moveToElement(HourStart).click().perform();
+       Thread.sleep(1000);
+
+       driver.findElement(By.xpath("/html/body/div[6]/ul/li[43]")).click();
+
+       Thread.sleep(1000);
+
+        WebElement HourEnd =driver.findElement(By.xpath("//input[starts-with(@id,'time_selector_oro_calendar_event_form_end-uid')]"));
+        JavascriptExecutor js= (JavascriptExecutor) driver ;
+        js.executeScript("arguments[0].click();", HourEnd);
+
+
+
+       // action.moveToElement(HourEnd).perform();
+
+     WebElement end =driver.findElement(By.xpath("/html/body/div[10]/ul/li[3]"));
+     String actual =end.getText();
+       String expected="10:00 PM";
+      Assert.assertEquals(actual,expected);
+      
+    }
+
 }

@@ -7,10 +7,7 @@
         <classes>
 
             <class name="com.cybertek.tests.d17_extent_reports.NegativeLoginTestWithReports">
-                <methods>
-                    <include name="wrongPasswordTest"/>
 
-                </methods>
             </class>
 
         </classes>

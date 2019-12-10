@@ -23,7 +23,6 @@ public abstract class BasePage {
     @FindBy(css = "#user-menu > a")
     protected WebElement userName;
 
-
     @FindBy(linkText = "Logout")
     public WebElement logOutLink;
 
@@ -40,8 +39,8 @@ public abstract class BasePage {
      */
     public String getPageSubTitle() {
         //ant time we are verifying page name, or page subtitle, loader mask appears
-      //  waitUntilLoaderScreenDisappear();
-        BrowserUtils.waitForStaleElement(pageSubTitle);
+        waitUntilLoaderScreenDisappear();
+//        BrowserUtils.waitForStaleElement(pageSubTitle);
         return pageSubTitle.getText();
     }
 
@@ -104,9 +103,8 @@ public abstract class BasePage {
             BrowserUtils.scrollToElement(Driver.get().findElement(By.xpath(moduleLocator)));
             Driver.get().findElement(By.xpath(moduleLocator)).click();
         } catch (Exception e) {
-            BrowserUtils.waitForStaleElement(Driver.get().findElement(By.xpath(moduleLocator)));
+//            BrowserUtils.waitForStaleElement(Driver.get().findElement(By.xpath(moduleLocator)));
             BrowserUtils.clickWithTimeOut(Driver.get().findElement(By.xpath(moduleLocator)),  5);
         }
     }
-
 }
