@@ -28,6 +28,7 @@ public class TestBase {
     @BeforeTest
     public void setUpTest() {
         report = new ExtentReports();
+
         String path = System.getProperty("user.dir") + "/test-output/report.html";
         htmlReporter = new ExtentHtmlReporter(path);
         report.attachReporter(htmlReporter);

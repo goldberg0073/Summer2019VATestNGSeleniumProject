@@ -21,7 +21,7 @@ public abstract class BasePage {
     protected WebElement pageSubTitle;
 
     @FindBy(css = "#user-menu > a")
-    protected WebElement userName;
+    public WebElement userName;
 
     @FindBy(linkText = "Logout")
     public WebElement logOutLink;

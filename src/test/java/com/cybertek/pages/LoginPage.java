@@ -10,6 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPage extends TestBase {
 
     public LoginPage(){
+
         PageFactory.initElements(Driver.get(), this);
     }
 

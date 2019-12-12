@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 
 public class NegativeLoginTests extends TestBase {
 
+
     @Test
     public void wrongPasswordTest(){
         LoginPage loginPage = new LoginPage();
